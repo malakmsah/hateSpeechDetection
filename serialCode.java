@@ -27,7 +27,6 @@ public class JavaApplication11 {
             for (int j = 0; j < fBPosts.length; j++) {
                 String textBody = fBPosts[j];
                 for (int i = 0; i < hateWordsList.length; i++) {
-                    //System.out.println("Thread #" + OMP4J_THREAD_NUM + "/" + OMP4J_NUM_THREADS);
                     boolean e = inParagraph(textBody, hateWordsList[i]);
                     if (e) {
                         System.out.println("'" + hateWordsList[i] + "'" + " found in the paragraph .");
