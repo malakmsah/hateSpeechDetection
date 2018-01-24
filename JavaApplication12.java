@@ -1,6 +1,9 @@
+/**
+* Parallel code
+**/
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import myClass.BlogPosts2;
 
 //import java.util.*;
@@ -31,6 +34,7 @@ public class JavaApplication12 {
                     boolean e = inParagraph(textBody, hateWordsList[i]);
                     if (e) {
                         System.out.println("'" + hateWordsList[i] + "'" + " found in the paragraph .");
+                        sendAlertEmail();
                     }
                 }
             }
@@ -47,50 +51,13 @@ public class JavaApplication12 {
         return m.find();
     }
 
-    // Send Email
-    /** // Send Email
- *  private static void sendEmail() {
-        // Recipient's email ID needs to be mentioned.
-        String to = "malak.abuhammad@gmail.com";
-
-        // Sender's email ID needs to be mentioned
-        String from = "m.abuhammad@gju.edu.jo";
-
-        // Assuming you are sending email from localhost
-        String host = "localhost";
-
-        // Get system properties
-        Properties properties = System.getProperties();
-
-        // Setup mail server
-        properties.setProperty("mail.smtp.host", host);
-
-        // Get the default Session object.
-        Session session = Session.getDefaultInstance(properties);
-
+   private static void sendAlertEmail() {
         try {
-            // Create a default MimeMessage object.
-            MimeMessage message = new MimeMessage(session);
-
-            // Set From: header field of the header.
-            message.setFrom(new InternetAddress(from));
-
-            // Set To: header field of the header.
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-
-            // Set Subject: header field
-            message.setSubject("This is the Subject Line!");
-
-            // Now set the actual message
-            message.setText("This is actual message");
-
-            // Send message
-            Transport.send(message);
-            System.out.println("Sent message successfully....");
+            // send email
         } catch (MessagingException mex) {
             mex.printStackTrace();
         }
-    }*/
+    }
 
     private static String[] getHateWords() {
         return new String[]{
